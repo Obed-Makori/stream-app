@@ -142,7 +142,7 @@ def main():
         # app description
         st.markdown('<p style="font-weight: 600;color:#686e83"> An application that predicts if a person is infected with diabetes</p>',unsafe_allow_html=True)
         #uploading image
-        image=Image.open("/home/obed/Documents/ML/PROJECTS/diabetes/image.png")
+        image=Image.open("/home/obed/Desktop/stream-app/image.png")
         st.image(image,use_column_width=True, caption="Image Source: https://images.app.goo.gl/A9X3ZYeCR5MjjoPS8")
 
         st.markdown('<h1>Data</h1>',unsafe_allow_html=True)
