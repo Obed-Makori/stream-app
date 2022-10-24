@@ -92,30 +92,7 @@ def main():
         # st.image(image)
 
         #mutiple("pred_inputs.html")
-        c1, c2=st.beta_columns(2)
-        # with c1:
-            
-
-        #     image=Image.open("/home/obed/Documents/ML/PROJECTS/diabetes/image.png")
-        #     st.image(image,use_column_width=True, caption="Image Source: https://images.app.goo.gl/A9X3ZYeCR5MjjoPS8")
-
-        #     logistic=Image.open("/home/obed/Documents/ML/PROJECTS/diabetes/detect.jpg")
-        #     st.image(logistic,use_column_width=True, caption="Logistic Regression")  
-
-        #     naivebayes=Image.open("/home/obed/Documents/ML/PROJECTS/diabetes/images/naivebayes.jpeg")
-        #     st.image(naivebayes,use_column_width=True, caption="Naive Bayes")
-
-        #     decision=Image.open("/home/obed/Documents/ML/PROJECTS/diabetes/images/decisiontree.jpeg")
-        #     st.image(decision,use_column_width=True, caption="Decision Tree")
-
-        # with c2:
-        #     randomforest=Image.open("/home/obed/Documents/ML/PROJECTS/diabetes/images/randomforest.jpeg")
-        #     st.image(randomforest,use_column_width=True, caption="Random Forest")
-        #     svm=Image.open("/home/obed/Documents/ML/PROJECTS/diabetes/images/svm.jpeg")
-        #     st.image(svm,use_column_width=True, caption="SVM")
-        #     knn=logistic=Image.open("/home/obed/Documents/ML/PROJECTS/diabetes/images/knn.png")
-        #     st.image(knn,use_column_width=True, caption="K-Nearest Neighbors")
-        
+        c1, c2=st.beta_columns(2)  
         
     
     elif choice=="Report":
