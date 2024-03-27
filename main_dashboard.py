@@ -45,7 +45,7 @@ def main():
             #Age
             age=st.number_input("Age",min_value=13)
 
-            # Every form must have a submit button.
+            # submit button
             submitted = st.form_submit_button("Predict")
             if submitted:
                 import numpy as np
@@ -75,8 +75,7 @@ def main():
                 else:
                     st.info("You are likely to be positive !! Please consult a doctor for medication")
 
-                
-            
+                    
                 
                 #import easygui
                 #easygui.msgbox(pred_values,ok_button="Close")
@@ -94,16 +93,19 @@ def main():
         # st.image(image)
 
         #mutiple("pred_inputs.html")
-        c1, c2=st.beta_columns(2)  
+        c1, c2=st.columns(2)  
         
     
     elif choice=="Report":
-        import pandas as pd
+        #st.status("Please Wait...")
+        st.error("You are about to get your report... See!")
+
         import pandas_profiling
         from streamlit_pandas_profiling import st_profile_report
-        df=pd.read_csv('diabetes.csv')
-        report= df.profile_report()
-        st_profile_report(report)
+
+        df = pd.read_csv('diabetes.csv')
+        pr = df.profile_report()
+        st_profile_report(pr)
 
         
     # ----------------------------------------------Dashboard page-----------------------------------
@@ -121,7 +123,7 @@ def main():
         # app description
         st.markdown('<p style="font-weight: 600;color:#686e83"> An application that predicts if a person is infected with diabetes</p>',unsafe_allow_html=True)
         #uploading image
-        image=Image.open("/home/obed/Desktop/stream-app/image.png")
+        image=Image.open("image.png")
         st.image(image,use_column_width=True, caption="Image Source: https://images.app.goo.gl/A9X3ZYeCR5MjjoPS8")
 
         st.markdown('<h1>Data</h1>',unsafe_allow_html=True)
@@ -139,7 +141,7 @@ def main():
         st.markdown('<h3>Data visualization</h3>',unsafe_allow_html=True)
         viz=st.selectbox("Feature Distribution",df.columns)
 
-        col1,col2=st.beta_columns(2)
+        col1,col2=st.columns(2)
 
         if viz=="Age":
             with col1:
@@ -225,6 +227,7 @@ def main():
 
         else:
             st.spinner(text="Please wait! This may take some time...")
+            st.status("Please Wait...")
             st.balloons()
             #st.title("Pairplot")
             fig = sns.pairplot(df, hue="Outcome")
@@ -241,10 +244,7 @@ def main():
              
             #charts=mc.make_charts())
             #st.write(charts)
-        
-
-
-        
+         
         
            
 
