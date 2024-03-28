@@ -119,7 +119,7 @@ def main():
         import pandas as pd
         import seaborn as sns
 
-        st.markdown('<h1 style=" color:#833471;font-weight: 600; ">🅳🅸🅰🅱🅴🆃🅴🆂 🅳🅴🆃🅴🅲🆃🅸🅾🅽</h1>',unsafe_allow_html=True)
+        st.markdown('<h1 style=" color:#833471;font-weight: 500; ">🅳🅸🅰🅱🅴🆃🅴🆂 🅳🅴🆃🅴🅲🆃🅸🅾🅽</h1>',unsafe_allow_html=True)
         # app description
         st.markdown('<p style="font-weight: 600;color:#686e83"> An application that predicts if a person is infected with diabetes</p>',unsafe_allow_html=True)
         #uploading image
@@ -131,6 +131,16 @@ def main():
         #st.write("""The first five rows of the dataset""")
         #loading the dataset
         df=pd.read_csv("diabetes.csv")
+        data_options=st.selectbox("How would you like to view Diabetes Dataset?", ('Sample','Whole dataset'))
+        if data_options=='Sample':
+            n=st.number_input("Enter no of rows", min_value=1,max_value=len(df),placeholder="type here")
+            df.sample(int(n))
+            
+        elif data_options=='Whole dataset':
+            st.write(df)
+        
+
+
         st.write(df.head())
 
         # statistical summary of the dataset
@@ -227,7 +237,7 @@ def main():
 
         else:
             st.spinner(text="Please wait! This may take some time...")
-            st.status("Please Wait...")
+            #st.status("Please Wait...")
             st.balloons()
             #st.title("Pairplot")
             fig = sns.pairplot(df, hue="Outcome")
