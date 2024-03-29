@@ -15,6 +15,7 @@ def mutiple(page_html,width=None,height=1500):
     components.html(page, width=width, height=height, scrolling=True)
 
 def main():
+
     """"a simple description of what the app does"""
 
     menu=['Dashboard',"Models","Predict","Report"]
@@ -131,19 +132,17 @@ def main():
         #st.write("""The first five rows of the dataset""")
         #loading the dataset
         df=pd.read_csv("diabetes.csv")
-        data_options=st.selectbox("How would you like to view Diabetes Dataset?", ('Sample','Whole dataset'))
+        data_options=st.selectbox("How would you like to view Diabetes Dataset?", ('Sample','Whole dataset', 'Only View Columns'))
         if data_options=='Sample':
-            n=st.number_input("Enter no of rows", min_value=1,max_value=len(df),placeholder="type here")
-            df.sample(int(n))
+            n=st.number_input("Enter the number of of rows to display", min_value=1,max_value=len(df),placeholder="please enter no of rows...")
+            st.write(df.sample(n))
             
         elif data_options=='Whole dataset':
             st.write(df)
+        elif data_options=='Only View Columns':
+            st.write(df.columns)
         
-
-
-        st.write(df.head())
-
-        # statistical summary of the dataset
+               # statistical summary of the dataset
         st.subheader("Statistical summary")
         st.write(df.describe())
 
