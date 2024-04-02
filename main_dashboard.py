@@ -230,9 +230,9 @@ def main():
             fig, ax = plt.subplots()
             sns.heatmap(df.corr(), ax=ax,annot=True,cmap="ocean")
             st.write(fig)
-            import pywedge as pw
-            from IPython.display import display
-            mc=pw.Pywedge_Charts(df,c=None, y="Outcome")
+            # import pywedge as pw
+            # from IPython.display import display
+            # mc=pw.Pywedge_Charts(df,c=None, y="Outcome")
 
         else:
             st.spinner(text="Please wait! This may take some time...")
@@ -242,15 +242,7 @@ def main():
             fig = sns.pairplot(df, hue="Outcome")
             st.pyplot(fig)
            
-            
-            
-
-	     
-	        
-            
-           
-           
-             
+        
             #charts=mc.make_charts())
             #st.write(charts)
          
