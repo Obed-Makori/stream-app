@@ -101,12 +101,17 @@ def main():
         #st.status("Please Wait...")
         st.error("You are about to get your report... See!")
 
-        import pandas_profiling
-        from streamlit_pandas_profiling import st_profile_report
+        # import pandas_profiling
+        # from streamlit_pandas_profiling import st_profile_report
 
+        # df = pd.read_csv('diabetes.csv')
+        # pr = df.profile_report()
+        # st_profile_report(pr)
+        from ydata_profiling import ProfileReport
+        import pandas as pd
         df = pd.read_csv('diabetes.csv')
-        pr = df.profile_report()
-        st_profile_report(pr)
+        profile = ProfileReport(df, title="Profiling Report")
+        st.write(profile)
 
         
     # ----------------------------------------------Dashboard page-----------------------------------
